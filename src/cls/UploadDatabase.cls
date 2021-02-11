@@ -1,18 +1,26 @@
 Class cls.UploadDatabase Extends %Persistent
 {
 
-ClassMethod UploadAirplaneGlobalFromCSV()
+ClassMethod UploadGlobalFromCSV(File As %String, Global As %String) As %Status
 {
+    ; Commands to Upload Global
+    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("aeronave.csv","^airplane")
+    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("fator_contribuinte.csv","^contributingFactor")
+    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("ocorrencia_tipo.csv","^typeOccurence")
+    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("recomendacao.csv","^recommendation")
+    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("ocorrencia.csv","^occurrence")
+    set tsC = $$$OK
     set file=##class(%Stream.FileCharacter).%New()
-    do file.LinkToFile("/irisdev/app/src/csv/aeronave.csv")
-    if '##class(%File).Exists("/irisdev/app/src/csv/aeronave.csv"){
-        write "File CSV was not founded"
+    do file.LinkToFile("/irisdev/app/src/csv/"_File)
+    if '##class(%File).Exists("/irisdev/app/src/csv/"_File){
+        return $$$ERROR(tsC,"File CSV Was Not Founded")
     }
     for {
         quit:(file.AtEnd)  
-        set line=file.ReadLine() write line,! 
-        set ^airplane($piece(line,";",1))=$piece(line,";",2,23)
+        set line=file.ReadLine()
+        set @Global@($piece(line,";",1))=$piece(line,";",2,*)
     }
+    return tsC
 }
 
 Storage Default
