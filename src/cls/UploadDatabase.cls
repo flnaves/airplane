@@ -6,8 +6,8 @@ ClassMethod UploadGlobalFromCSV() As %Status
     ; Command to Upload All Globals
     ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV()
     set tsC = $$$OK
-    do ..ReadCSV("aeronave"),..ReadCSV("fator_contribuinte"),..ReadCSV("ocorrencia_tipo"),..ReadCSV("recomendacao")
-    do ..ReadCSV("ocorrencia")
+    do ..ReadCSV("AIRPLANE"),..ReadCSV("FACTOR"),..ReadCSV("TYPE"),..ReadCSV("RECOMMENDATION")
+    do ..ReadCSV("OCCURRENCE")
     return tsC
 }
 
@@ -24,10 +24,10 @@ ClassMethod ReadCSV(CsvName As %String) As %Status
     for {
         quit:(file.AtEnd)  
         set line=file.ReadLine(),line=$tr(line,$c(13),"")
-        if (CsvName = "aeronave") || (CsvName = "recomendacao") set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",2))=$piece(line,";",3,*)
-        if CsvName = "ocorrencia" set ^occurrence($piece(line,";",1),CsvName)=$piece(line,";",2,*)
-        if CsvName = "ocorrencia_tipo" set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",3),$piece(line,";",2),$piece(line,";",4))=""
-        if CsvName = "fator_contribuinte" set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",2),$piece(line,";",3),$piece(line,";",4),$piece(line,";",5))=""
+        if (CsvName = "AIRPLANE") || (CsvName = "RECOMMENDATION") set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",2))=$piece(line,";",3,*)
+        if CsvName = "OCCURRENCE" set ^occurrence($piece(line,";",1),CsvName)=$piece(line,";",2,*)
+        if CsvName = "TYPE" set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",3),$piece(line,";",2),$piece(line,";",4))=""
+        if CsvName = "FACTOR" set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",2),$piece(line,";",3),$piece(line,";",4),$piece(line,";",5))=""
     }
     Return sc
 }
