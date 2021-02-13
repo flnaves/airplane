@@ -1,26 +1,35 @@
 Class cls.UploadDatabase Extends %Persistent
 {
 
-ClassMethod UploadGlobalFromCSV(File As %String, Global As %String) As %Status
+ClassMethod UploadGlobalFromCSV() As %Status
 {
-    ; Commands to Upload Global
-    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("aeronave.csv","^airplane")
-    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("fator_contribuinte.csv","^contributingFactor")
-    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("ocorrencia_tipo.csv","^typeOccurence")
-    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("recomendacao.csv","^recommendation")
-    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV("ocorrencia.csv","^occurrence")
+    ; Command to Upload All Globals
+    ; s value=##class(cls.UploadDatabase).UploadGlobalFromCSV()
     set tsC = $$$OK
+    do ..ReadCSV("aeronave"),..ReadCSV("fator_contribuinte"),..ReadCSV("ocorrencia_tipo"),..ReadCSV("recomendacao")
+    do ..ReadCSV("ocorrencia")
+    return tsC
+}
+
+/// Description
+ClassMethod ReadCSV(CsvName As %String) As %Status
+{
+    Set sc = $$$OK
+    
     set file=##class(%Stream.FileCharacter).%New()
-    do file.LinkToFile("/irisdev/app/src/csv/"_File)
-    if '##class(%File).Exists("/irisdev/app/src/csv/"_File){
-        return $$$ERROR(tsC,"File CSV Was Not Founded")
+    do file.LinkToFile("/irisdev/app/src/csv/"_CsvName_".csv")
+    if '##class(%File).Exists("/irisdev/app/src/csv/"_CsvName_".csv"){
+        return $$$ERROR(sc,"File "_CsvName_".csv was not founded")
     }
     for {
         quit:(file.AtEnd)  
-        set line=file.ReadLine()
-        set @Global@($piece(line,";",1))=$piece(line,";",2,*)
+        set line=file.ReadLine(),line=$tr(line,$c(13),"")
+        if (CsvName = "aeronave") || (CsvName = "recomendacao") set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",2))=$piece(line,";",3,*)
+        if CsvName = "ocorrencia" set ^occurrence($piece(line,";",1),CsvName)=$piece(line,";",2,*)
+        if CsvName = "ocorrencia_tipo" set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",3),$piece(line,";",2),$piece(line,";",4))=""
+        if CsvName = "fator_contribuinte" set ^occurrence($piece(line,";",1),CsvName,$piece(line,";",2),$piece(line,";",3),$piece(line,";",4),$piece(line,";",5))=""
     }
-    return tsC
+    Return sc
 }
 
 Storage Default
