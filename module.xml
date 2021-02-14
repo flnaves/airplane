@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Export generator="Cache" version="25">
-  <Document name="rest-api-template.ZPM">
+  <Document name="report-airplane.ZPM">
     <Module>
-      <Name>rest-api-template</Name>
+      <Name>report-airplane</Name>
       <Version>1.1.0</Version>
       <Packaging>module</Packaging>
       <SourcesRoot>src</SourcesRoot>
-      <Resource Name="dc.Sample.PKG"/>
+      <Resource Name="dc.Report.PKG"/>
       <Dependencies>
         <ModuleReference>
           <Name>swagger-ui</Name>
@@ -14,14 +14,14 @@
         </ModuleReference>
       </Dependencies>
        <CSPApplication 
-        Url="/crud"
-        DispatchClass="dc.Sample.PersonREST"
+        Url="/report"
+        DispatchClass="dc.Report.WebREST"
         MatchRoles=":{$dbrole}"
         PasswordAuthEnabled="1"
         UnauthenticatedEnabled="0"
         Recurse="1"
         UseCookies="2"
-        CookiePath="/crud"
+        CookiePath="/report"
        />
     </Module>
     
