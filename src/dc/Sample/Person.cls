@@ -1,4 +1,4 @@
-Class dc.Sample.Person Extends (%Persistent, %JSON.Adaptor, %Populate)
+Class Sample.Person Extends (%Persistent, %JSON.Adaptor, %Populate)
 {
 
 Property Name As %VarString;
