@@ -5,6 +5,7 @@ services:
       context: ./iris
       dockerfile: Dockerfile
     restart: always
+    container_name: iris
     ports: 
       - 51773
       - 52773:52773
@@ -21,12 +22,15 @@ services:
       context: ./web
       dockerfile: Dockerfile
     restart: always
+    container_name: react
     ports: 
       - 3000:3000
     depends_on: 
       - iris
     networks: 
       - production-network
+    volumes:
+      - ./web:/usr/app
 networks: 
   production-network:
     driver: bridge
