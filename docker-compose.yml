@@ -2,7 +2,7 @@ version: '3.6'
 services:
   iris:
     build: 
-      context: .
+      context: ./iris
       dockerfile: Dockerfile
     restart: always
     ports: 
@@ -10,7 +10,23 @@ services:
       - 52773:52773
       - 53773
     volumes:
-      - ./:/irisdev/app
-      - ./data:/durable 
+      - ./iris:/irisdev/app
+      - ./iris/data:/durable 
     environment: 
       - ISC_DATA_DIRECTORY=/durable
+    networks: 
+      - production-network
+  react:
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    restart: always
+    ports: 
+      - 3000:3000
+    depends_on: 
+      - iris
+    networks: 
+      - production-network
+networks: 
+  production-network:
+    driver: bridge
