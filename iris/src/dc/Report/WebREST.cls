@@ -30,6 +30,8 @@ ClassMethod GetInfo() As %Status
 /// WebREST Get All Category Info
 ClassMethod GetAllCategoryInfo() As %Status
 {
+  #dim tSC As %Status = $$$OK
+  set %response.ContentType = ..#CONTENTTYPEJSON
   set number="",first=1
   write "{"
   write """Result"""_":["
@@ -52,7 +54,7 @@ info ; Read the array with information of all category
   goto info
 final ; Finish Json file
   write "]}"
-  quit $$$OK
+  quit tSC
 }
 
 /// Get information on the type of occurrence
