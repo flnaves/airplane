@@ -3,7 +3,7 @@ import React from 'react';
 import Breadcrumb from '../Header/Breadcrumbs';
 
 const Type = () => {
-    axios.post('http://localhost:52773/report/category/all', {
+    axios.get('http://localhost:52773/report/category/all', {
         auth: { 
            username: '_SYSTEM', 
            password: 'SYS' 
