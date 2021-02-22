@@ -107,4 +107,14 @@ ClassMethod ReportHttpStatusCode(pHttpStatus, pSC As %Status = {$$$OK}) As %Stat
   Return $$$OK
 }
 
+ClassMethod HandleDefaultCorsRequest(pUrl As %String) As %Status [ Private ]
+{
+	Do %response.SetHeader("Access-Control-Allow-Origin","*")
+	Do %response.SetHeader("Access-Control-Allow-Credentials","true")
+	Do %response.SetHeader("Access-Control-Allow-Methods","GET, PUT, POST, DELETE, PATCH, OPTIONS")
+	Do %response.SetHeader("Access-Control-Allow-Headers","Access-Control-*, Content-Type, Authorization, Accept, Accept-Language, X-Requested-With, Origin")
+	
+	Quit $$$OK
+}
+
 }

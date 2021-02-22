@@ -9,11 +9,11 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 <!-- Server Info -->
 <Route Url="/" Method="GET" Call="GetInfo" Cors="true"/>
 <!-- Get all records of Person class -->
-<Route Url="/category/all" Method="GET" Call="GetAllCategoryInfo"/>
+<Route Url="/category/all" Method="GET" Call="GetAllCategoryInfo" Cors="true"/>
 <!-- Get all records of Person class -->
-<Route Url="/type/all" Method="GET" Call="GetAllTypeInfo"/>
+<Route Url="/type/all" Method="GET" Call="GetAllTypeInfo" Cors="true"/>
 <!-- Get all records of Person class -->
-<Route Url="/geographic/all" Method="GET" Call="GetGeographicInformationLevelNumber"/>
+<Route Url="/geographic/all" Method="GET" Call="GetGeographicInformationLevelNumber" Cors="true"/>
 </Routes>
 }
 
