@@ -1,34 +1,13 @@
-import axios from 'axios';
 import React from 'react';
 import Breadcrumb from '../Header/Breadcrumbs';
-
-const Type = () => {
-    axios.get('http://localhost:52773/report/category/all', {
-        auth: { 
-           username: '_SYSTEM', 
-           password: 'SYS' 
-        }
-    })
-    .then((result) => {
-        console.log(result);
-    })
-    .catch((error) => {
-        console.log(error);
-    })
-
-    return (
-        <React.Fragment>
-
-        </React.Fragment>
-    )
-}
+import { Types } from '../Reports/Types/Types';
 
 const Dashboard = () => {
     return (
         <React.Fragment>
             <Breadcrumb/>
 
-            <Type/>
+            <Types/>
         </React.Fragment>
     );
 }
