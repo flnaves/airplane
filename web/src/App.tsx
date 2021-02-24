@@ -14,6 +14,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import Dashboard from "./components/Dashboard/Dashboard";
+import { Types } from "./components/Reports/Types/Types";
 
 const drawerWidth = 240;
 
@@ -160,6 +161,8 @@ const App = () => {
             >
               <Switch>
                 <Route path="/" component={Dashboard} exact />
+                <Route path="/report/occurenceType" component={Types} exact />
+                <Route component={Dashboard} />
               </Switch>
             </main>
           </div>

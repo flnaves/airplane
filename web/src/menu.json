@@ -1,3 +1,16 @@
 [
-    { "name": "dashboard", "label": "Dashboard", "descr": "", "Icon": "home", "to": "/"}
+    {
+        "name": "dashboard",
+        "label": "Dashboard",
+        "descr": "",
+        "Icon": "home",
+        "to": "/"
+    },
+    {
+        "name": "occurrenceType",
+        "label": "Occurence type",
+        "descr": "",
+        "Icon": "home",
+        "to": "/report/occurenceType"
+    }
 ]

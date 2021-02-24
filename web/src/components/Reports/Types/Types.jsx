@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import HorizontalBarChart from '../../Charts/HorizontalBarChart/HorizontalBarChart';
+import Breadcrumb from '../../Header/Breadcrumbs';
 
 interface OwnProps {
     values: any
@@ -30,6 +31,7 @@ export class Types extends Component<OwnProps, {}>{
     render() {
         return (
             <React.Fragment>
+                <Breadcrumb />
                 <h1>OCCURENCE TYPE</h1>
                 {this.state.values}
             </React.Fragment>
