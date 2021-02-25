@@ -9,5 +9,10 @@ export const translationEn = {
     hideMenu: "Hide menu",
     showMenu: "Show menu",
     report: "Report",
-    occurenceType: "Occurence type"
+    airplaneModel: "Airplane model",
+    geographic: "Geographic",
+    occurenceType: "Occurence type",
+    seeGraph: "See graph",
+    total: "Total",
+    contributingFactors: "Contributing factors"
 };  

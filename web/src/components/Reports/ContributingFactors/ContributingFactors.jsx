@@ -6,7 +6,7 @@ import Breadcrumb from '../../Header/Breadcrumbs';
 interface OwnProps {
     values: any
 }
-export class Types extends Component<OwnProps, {}>{
+export class ContributingFactors extends Component<OwnProps, {}>{
 
     constructor(props: OwnProps) {
         super(props);
@@ -24,7 +24,7 @@ export class Types extends Component<OwnProps, {}>{
             }
         }).then((result) => {
             const data = result.data.Result;
-            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="type" height={2000} /> });
+            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="type" /> });
         });
     }
 
@@ -32,7 +32,7 @@ export class Types extends Component<OwnProps, {}>{
         return (
             <React.Fragment>
                 <Breadcrumb />
-                <h1>OCCURENCE TYPE</h1>
+                <h1>CONTRIBUTING FACTORS</h1>
                 {this.state.values}
             </React.Fragment>
         )
