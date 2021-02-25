@@ -1,13 +1,10 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import Breadcrumb from '../../Header/Breadcrumbs';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { chownSync } from 'fs';
+import { CardHeader } from '@material-ui/core';
 
 interface OwnProps {
     values: any
@@ -26,7 +23,7 @@ export class GeographicCard extends Component<OwnProps, {}>{
     componentDidMount() {
         const { t, classes } = this.props;
 
-        axios.get('http://127.0.0.1:52773/report/type/all', {
+        axios.get('http://127.0.0.1:52773/report/geographic/all', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
@@ -34,16 +31,39 @@ export class GeographicCard extends Component<OwnProps, {}>{
         }).then((result) => {
             const data = result.data.Result;
 
+            let values = [];
+            data.forEach(element => {
+                const level = element.level;
+                const states = element.states;
+                const quantity = element.quantity;
+
+                let total = 0;
+                states.forEach((element, i) => {
+                    total = total + parseInt(quantity[i]);
+                });
+
+                values[level] = total;
+            });
+
+            const keys = Object.keys(values);
+
             this.setState({
                 values:
                     <Card className={classes.root}>
-                        <CardActionArea>
+                        <CardActionArea style={{ height: 160 }}>
+                            <CardHeader
+                                title={t('geographic')}
+                            />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
-                                    {t('geographic')}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {t('total')}: {data.length}
+                                <Typography gutterBottom variant="h5" component="h2" style={{ 'font-size': '15px' }}>
+                                    {keys.map((key) => {
+                                        return (
+                                            <React.Fragment>
+                                                <strong>{key}</strong>: {values[key]}
+                                                <br />
+                                            </React.Fragment>
+                                        )
+                                    })}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

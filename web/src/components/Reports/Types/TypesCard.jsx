@@ -1,13 +1,10 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import Breadcrumb from '../../Header/Breadcrumbs';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { chownSync } from 'fs';
+import { CardHeader } from '@material-ui/core';
 
 interface OwnProps {
     values: any
@@ -34,16 +31,22 @@ export class TypesCard extends Component<OwnProps, {}>{
         }).then((result) => {
             const data = result.data.Result;
 
+            let total = 0;
+            data.forEach(element => {
+                total = (total + parseInt(element.count));
+            });
+
             this.setState({
                 values:
                     <Card className={classes.root}>
-                        <CardActionArea>
+                        <CardActionArea style={{ height: 160 }}>
+                            <CardHeader
+                                style={{ 'margin-top': '-19px' }}
+                                title={t('occurenceType')}
+                            />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
-                                    {t('occurenceType')}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {t('total')}: {data.length}
+                                    <strong>{t('total')}</strong>: {total}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

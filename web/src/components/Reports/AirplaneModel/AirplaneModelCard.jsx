@@ -4,6 +4,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+import { CardHeader } from '@material-ui/core';
 
 interface OwnProps {
     values: any
@@ -30,16 +31,22 @@ export class AirplaneModelCard extends Component<OwnProps, {}>{
         }).then((result) => {
             const data = result.data.Result;
 
+            let total = 0;
+            data.forEach(element => {
+                total = (total + parseInt(element.count));
+            });
+
             this.setState({
                 values:
                     <Card className={classes.root}>
-                        <CardActionArea>
+                        <CardActionArea style={{ height: 160 }}>
+                            <CardHeader
+                                style={{ 'margin-top': '-19px' }}
+                                title={t('occurenceType')}
+                            />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
-                                    {t('airplaneModel')}
-                                </Typography>
-                                <Typography variant="body2" color="textSecondary" component="p">
-                                    {t('total')}: {data.length}
+                                    <strong>{t('total')}</strong>: {total}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
