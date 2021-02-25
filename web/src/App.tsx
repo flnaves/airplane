@@ -15,6 +15,9 @@ import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import Dashboard from "./components/Dashboard/Dashboard";
 import { Types } from "./components/Reports/Types/Types";
+import { AirplaneModel } from "./components/Reports/AirplaneModel/AirplaneModel";
+import { Geographic } from "./components/Reports/Geographic/Geographic";
+import { ContributingFactors } from "./components/Reports/ContributingFactors/ContributingFactors";
 
 const drawerWidth = 240;
 
@@ -161,7 +164,10 @@ const App = () => {
             >
               <Switch>
                 <Route path="/" component={Dashboard} exact />
-                <Route path="/report/occurenceType" component={Types} exact />
+                <Route path="/occurenceType" component={Types} />
+                <Route path="/airplaneModel" component={AirplaneModel} />
+                <Route path="/geographic" component={Geographic} />
+                <Route path="/contributingFactors" component={ContributingFactors} />
                 <Route component={Dashboard} />
               </Switch>
             </main>

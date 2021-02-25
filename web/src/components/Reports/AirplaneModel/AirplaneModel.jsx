@@ -17,14 +17,14 @@ export class AirplaneModel extends Component<OwnProps, {}>{
     }
 
     componentDidMount() {
-        axios.get('http://127.0.0.1:52773/report/type/all', {
+        axios.get('http://127.0.0.1:52773/report/category/all', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             }
         }).then((result) => {
             const data = result.data.Result;
-            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="type" /> });
+            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="category" /> });
         });
     }
 
@@ -32,7 +32,7 @@ export class AirplaneModel extends Component<OwnProps, {}>{
         return (
             <React.Fragment>
                 <Breadcrumb />
-                <h1>OCCURENCE TYPE</h1>
+                <h1>AIRPLANE MODEL</h1>
                 {this.state.values}
             </React.Fragment>
         )

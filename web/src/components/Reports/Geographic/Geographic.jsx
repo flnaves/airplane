@@ -32,7 +32,7 @@ export class Geographic extends Component<OwnProps, {}>{
         return (
             <React.Fragment>
                 <Breadcrumb />
-                <h1>OCCURENCE TYPE</h1>
+                <h1>GEOGRAPHIC</h1>
                 {this.state.values}
             </React.Fragment>
         )

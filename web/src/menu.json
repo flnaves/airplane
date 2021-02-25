@@ -11,27 +11,27 @@
         "label": "Occurence type",
         "descr": "",
         "Icon": "description",
-        "to": "/report/occurenceType"
+        "to": "/occurenceType"
     },
     {
         "name": "AirplaneModel",
         "label": "Airplane model",
         "descr": "",
         "Icon": "airplanemode_active",
-        "to": "/report/airplaneModel"
+        "to": "/airplaneModel"
     },
     {
         "name": "geographic",
         "label": "Geographic",
         "descr": "",
         "Icon": "language",
-        "to": "/report/geographic"
+        "to": "/geographic"
     },
     {
         "name": "ContributingFactors",
         "label": "Contributing factors",
         "descr": "",
         "Icon": "flight_land",
-        "to": "/report/contributingFactors"
+        "to": "/contributingFactors"
     }
 ]
