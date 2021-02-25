@@ -11,7 +11,6 @@ services:
       - 52773:52773
       - 53773
     volumes:
-      - ./iris:/irisdev/app
       - ./iris/data:/durable 
     environment: 
       - ISC_DATA_DIRECTORY=/durable

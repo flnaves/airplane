@@ -15,10 +15,9 @@ ClassMethod UploadGlobalFromCSV() As %Status
 ClassMethod ReadCSV(CsvName As %String) As %Status
 {
     Set sc = $$$OK
-    
     set file=##class(%Stream.FileCharacter).%New()
-    do file.LinkToFile("/irisdev/app/src/csv/"_CsvName_".csv")
-    if '##class(%File).Exists("/irisdev/app/src/csv/"_CsvName_".csv"){
+    do file.LinkToFile("/opt/irisapp/src/csv/"_CsvName_".csv")
+    if '##class(%File).Exists("/opt/irisapp/src/csv/"_CsvName_".csv"){
         return $$$ERROR(sc,"File "_CsvName_".csv was not founded")
     }
     for {
