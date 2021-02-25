@@ -16,7 +16,7 @@ export class ContributingFactors extends Component<OwnProps, {}>{
         }
     }
 
-    componentDidMount() {
+    UNSAFE_componentWillMount() {
         axios.get('http://127.0.0.1:52773/report/type/all', {
             headers: {
                 "Accept": "application/json",

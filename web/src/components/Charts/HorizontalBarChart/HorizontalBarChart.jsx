@@ -35,7 +35,7 @@ export default class HorizontalBarChart extends React.PureComponent {
         return (
             <Paper>
                 <Chart
-                    height={2000}
+                    height={this.props.height}
                     data={chartData}
                     rotated>
                     <ValueAxis position="top" labelComponent={Label} />

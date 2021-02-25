@@ -22,7 +22,7 @@ export class AirplaneModelCard extends Component<OwnProps, {}>{
     componentDidMount() {
         const { t, classes } = this.props;
 
-        axios.get('http://127.0.0.1:52773/report/type/all', {
+        axios.get('http://127.0.0.1:52773/report/category/all', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"

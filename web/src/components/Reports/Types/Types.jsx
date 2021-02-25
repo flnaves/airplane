@@ -16,7 +16,7 @@ export class Types extends Component<OwnProps, {}>{
         }
     }
 
-    componentDidMount() {
+    UNSAFE_componentWillMount() {
         axios.get('http://127.0.0.1:52773/report/type/all', {
             headers: {
                 "Accept": "application/json",
@@ -24,7 +24,7 @@ export class Types extends Component<OwnProps, {}>{
             }
         }).then((result) => {
             const data = result.data.Result;
-            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="type" /> });
+            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="type" height={2000} /> });
         });
     }
 
