@@ -10,7 +10,28 @@
         "name": "occurrenceType",
         "label": "Occurence type",
         "descr": "",
-        "Icon": "home",
+        "Icon": "description",
         "to": "/report/occurenceType"
+    },
+    {
+        "name": "AirplaneModel",
+        "label": "Airplane model",
+        "descr": "",
+        "Icon": "airplanemode_active",
+        "to": "/report/airplaneModel"
+    },
+    {
+        "name": "geographic",
+        "label": "Geographic",
+        "descr": "",
+        "Icon": "language",
+        "to": "/report/geographic"
+    },
+    {
+        "name": "ContributingFactors",
+        "label": "Contributing factors",
+        "descr": "",
+        "Icon": "flight_land",
+        "to": "/report/contributingFactors"
     }
 ]
