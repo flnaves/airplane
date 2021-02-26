@@ -16,20 +16,6 @@ services:
       - ISC_DATA_DIRECTORY=/durable
     networks: 
       - production-network
-  react:
-    build: 
-      context: ./web
-      dockerfile: Dockerfile
-    restart: always
-    container_name: react
-    ports: 
-      - 3000:3000
-    depends_on: 
-      - iris
-    networks: 
-      - production-network
-    volumes:
-      - ./web:/usr/app
 networks: 
   production-network:
     driver: bridge
