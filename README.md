@@ -1,5 +1,5 @@
-# Airplane
-This is a Demo of using React, Yarn and a REST API application in InterSystems IRIS, showing information with different types of graphics, the datasource is get from CENIPA (Aeronautical Accident Prevention and Research Center).
+# Airplane (React, Material UI, and REST API)
+This is a Demo of using React, Material UI and a REST API application in InterSystems IRIS, showing information with different types of graphics, the datasource is get from CENIPA (Aeronautical Accident Prevention and Research Center).
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
@@ -8,7 +8,9 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 
 ### Installation with ZPM
 
+```
 zpm:USER>install airplane
+```
 
 ### Installation
 
