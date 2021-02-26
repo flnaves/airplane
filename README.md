@@ -43,3 +43,16 @@ http://localhost:3000/
 or open the folder in VSCode and do the following:
 ![rest](https://user-images.githubusercontent.com/2781759/78183327-63569800-7470-11ea-8561-c3b547ce9001.gif)
 
+### Testing
+
+## Unit Test
+
+To test and see if all Unit tests are working go to terminal and execute:
+
+$ set ^UnitTestRoot="/opt/irisapp/tests/UnitTest/Report"
+$ do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
+
+# Developers
+
+:boy: Flávio Lúcio Naves Júnior
+:older_man: Felipe França @felipeflfranca 
