@@ -3,9 +3,9 @@ This is a Demo of using React, Material UI and a REST API application in InterSy
 
 ## Developers
 
-:boy: Flávio Lúcio Naves Júnior @flnaves
+:boy: Flávio Lúcio Naves Júnior [@flnaves](https://github.com/flnaves)
 
-:older_man: Felipe França @felipeflfranca 
+:older_man: Felipe França [@felipeflfranca](https://github.com/felipeflfranca) 
 
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
@@ -55,5 +55,7 @@ or open the folder in VSCode and do the following:
 
 To test and see if all Unit tests are working go to terminal and execute:
 
+```
 $ set ^UnitTestRoot="/opt/irisapp/tests/UnitTest/Report"
 $ do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
+```
