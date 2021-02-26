@@ -13,7 +13,11 @@ XData UrlMap [ XMLNamespace = "http://www.intersystems.com/urlmap" ]
 <!-- Get all records of Person class -->
 <Route Url="/type/all" Method="GET" Call="GetAllTypeInfo" Cors="true"/>
 <!-- Get all records of Person class -->
-<Route Url="/geographic/all" Method="GET" Call="GetGeographicInformationLevelNumber" Cors="true"/>
+<Route Url="/geographic/all" Method="GET" Call="GetAllGeographicInfoLevelNumber" Cors="true"/>
+<!-- Get all records of Person class -->
+<Route Url="/geographic/:id" Method="GET" Call="GetGeographicInfoLevelNumber" Cors="true"/>
+<!-- Get all records of Person class -->
+<Route Url="/factor/" Method="GET" Call="GetAllFactorInfo" Cors="true"/>
 </Routes>
 }
 
@@ -87,7 +91,7 @@ final ; Finish Json file
 }
 
 /// Get information on the type of occurrence
-ClassMethod GetGeographicInformationLevelNumber() As %Status
+ClassMethod GetAllGeographicInfoLevelNumber() As %Status
 {
   set number=""
   set statesArray=[],quantityArray=[]
@@ -114,6 +118,37 @@ state
   do quantityArray.%Push(quantity,"number")
   goto state
 final 
+  write "]}"
+  quit $$$OK
+}
+
+/// Get information about factor occurrence
+ClassMethod GetAllFactorInfo() As %Status
+{
+  set number="",first=1
+  write "{"
+  write """Result"""_":["
+loop ; Scroll through the global to find most 
+  set number=$order(^occurrence(number)) goto:number="" info
+  set aspect=""
+aspect
+  set aspect=$order(^occurrence(number,"FACTOR",aspect)) goto:aspect="" loop
+  set name=""
+name
+  set name=$order(^occurrence(number,"FACTOR",aspect,name)) goto:name="" aspect
+  set report(name)=$get(report(name))+1
+  goto name
+info ; Read the array with information of all aspect
+  set name=$order(report(name)) goto:name="" final 
+  set result= {
+    "Name":(name),
+    "count": (report(name))
+  }
+  if 'first write ","
+  write result.%ToJSON() ; Export in Json format
+  set first=0
+  goto info
+final ; Finish Json file
   write "]}"
   quit $$$OK
 }
