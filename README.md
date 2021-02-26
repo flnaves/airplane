@@ -56,6 +56,6 @@ or open the folder in VSCode and do the following:
 To test and see if all Unit tests are working go to terminal and execute:
 
 ```
-$ set ^UnitTestRoot="/opt/irisapp/tests/UnitTest/Report"
-$ do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
+USER> set ^UnitTestRoot="/opt/irisapp/tests/UnitTest/Report"
+USER> do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
 ```
