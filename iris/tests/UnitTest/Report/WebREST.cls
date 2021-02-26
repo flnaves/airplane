@@ -15,9 +15,9 @@ Method TestGetAllCategoryInfo()
 }
 
 /// Unit test of method 
-Method TestGetGeographicInformationLevelNumber()
+Method TestGetAllGeographicInfoLevelNumber()
 {
-   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetGeographicInformationLevelNumber(),"Getting all geographic level number information")
+   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetAllGeographicInformationLevelNumber(),"Getting all geographic level number information")
 }
 
 }
