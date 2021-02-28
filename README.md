@@ -12,12 +12,6 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 
 ## How to Run the Application
 
-### Installation with ZPM
-
-```
-zpm:USER>install airplane
-```
-
 ### Installation
 
 Clone/git pull the repo into any local directory e.g. like it is shown below:
