@@ -8,6 +8,12 @@ Method TestGetAllTypeInfo()
     do $$$AssertStatusOK(##class(dc.Report.WebREST).GetAllTypeInfo(),"Getting all type information")
 }
 
+/// Unit test of method 
+Method TestGetDateTypeInfo()
+{
+   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetDateTypeInfo("2010-01-01"),"Getting type information using date")
+}
+
 /// Unit test of method Category Info
 Method TestGetAllCategoryInfo()
 {
@@ -15,9 +21,21 @@ Method TestGetAllCategoryInfo()
 }
 
 /// Unit test of method 
+Method TestGetDateCategoryInfo()
+{
+   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetDateCategoryInfo("2010-01-01"),"Getting category information using date")
+}
+
+/// Unit test of method 
 Method TestGetAllGeographicInfoLevelNumber()
 {
-   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetAllGeographicInformationLevelNumber(),"Getting all geographic level number information")
+   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetAllGeographicInfoLevelNumber(),"Getting all geographic information")
+}
+
+/// Unit test of method 
+Method TestGetDateGeographicInfoLevelNumber()
+{
+   do $$$AssertStatusOK(##class(dc.Report.WebREST).GetDateGeographicInfoLevelNumber("2010-01-01"),"Getting geographic information using date")
 }
 
 }
