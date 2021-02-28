@@ -17,7 +17,7 @@ export class Types extends Component<OwnProps, {}>{
     }
 
     UNSAFE_componentWillMount() {
-        axios.get('http://127.0.0.1:52773/report/type/all', {
+        axios.get('http://127.0.0.1:52773/report/type/', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"

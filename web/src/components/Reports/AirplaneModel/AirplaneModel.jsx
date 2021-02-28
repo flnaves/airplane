@@ -17,7 +17,7 @@ export class AirplaneModel extends Component<OwnProps, {}>{
     }
 
     UNSAFE_componentWillMount() {
-        axios.get('http://127.0.0.1:52773/report/category/all', {
+        axios.get('http://127.0.0.1:52773/report/category/', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"

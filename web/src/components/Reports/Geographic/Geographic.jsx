@@ -18,7 +18,7 @@ export class Geographic extends Component<OwnProps, {}>{
     }
 
     UNSAFE_componentWillMount() {
-        axios.get('http://127.0.0.1:52773/report/geographic/all', {
+        axios.get('http://127.0.0.1:52773/report/geographic/', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"

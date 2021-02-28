@@ -23,7 +23,7 @@ export class GeographicCard extends Component<OwnProps, {}>{
     componentDidMount() {
         const { t, classes } = this.props;
 
-        axios.get('http://127.0.0.1:52773/report/geographic/all', {
+        axios.get('http://127.0.0.1:52773/report/geographic/', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
