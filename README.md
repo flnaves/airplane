@@ -47,6 +47,8 @@ http://localhost:3000/
 
 or open the folder in VSCode and do the following:
 
+![gif](https://media.giphy.com/media/j7rV3n5DWGOUKXgeou/giphy.gif)
+
 # Testing
 
 ## Unit Test
