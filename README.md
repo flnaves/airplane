@@ -35,7 +35,6 @@ $ docker-compose up -d --build
 Go to /Web folder and Run the Yarn:
 
 ```
-$ yarns install
 $ yarn
 $ yarn start
 ```
@@ -55,6 +54,5 @@ or open the folder in VSCode and do the following:
 To test and see if all Unit tests are working go to terminal and execute:
 
 ```
-USER> set ^UnitTestRoot="/opt/irisapp/tests/UnitTest/Report"
 USER> do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
 ```
