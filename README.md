@@ -59,6 +59,11 @@ To test and see if all Unit tests are working go to terminal and execute:
 USER> do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
 ```
 
+See the results on:
+
+```
+http://localhost:52773/csp/sys/%25UnitTest.Portal.Indices.cls?Index=2&$NAMESPACE=USER
+```
 Tutorial how to test:
 
 ![gif](unittest.gif)
