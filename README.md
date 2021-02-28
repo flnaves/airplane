@@ -58,3 +58,7 @@ To test and see if all Unit tests are working go to terminal and execute:
 ```
 USER> do ##class(%UnitTest.Manager).RunTest(,"/nodelete")
 ```
+
+Tutorial how to test:
+
+![gif](unittest.gif)
