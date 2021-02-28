@@ -11,6 +11,7 @@ USER ${ISC_PACKAGE_MGRUSER}
 COPY src src
 COPY tests tests
 COPY module.xml module.xml
+COPY Installer.cls Installer.cls
 COPY iris.script /tmp/iris.script
 
 RUN iris start IRIS \
