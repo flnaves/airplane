@@ -24,7 +24,7 @@ export class ContributingFactors extends Component<OwnProps, {}>{
             }
         }).then((result) => {
             const data = result.data.Result;
-            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="name" height={2000}/> });
+            this.setState({ values: <HorizontalBarChart types={data} valueField="count" argumentField="Name" height={2000}/> });
         });
     }
 
