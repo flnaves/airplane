@@ -23,13 +23,18 @@ export class ContributingFactorsCard extends Component<OwnProps, {}>{
     componentDidMount() {
         const { t, classes } = this.props;
 
-        axios.get('http://127.0.0.1:52773/report/type/', {
+        axios.get('http://127.0.0.1:52773/report/factor/', {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             }
         }).then((result) => {
             const data = result.data.Result;
+
+            let total = 0;
+            data.forEach(element => {
+                total = (total + parseInt(element.count));
+            });
 
             this.setState({
                 values:
@@ -41,7 +46,7 @@ export class ContributingFactorsCard extends Component<OwnProps, {}>{
                             />
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
-                                    <strong>{t('total')}</strong>: {data.length}
+                                    <strong>{t('total')}</strong>: {total}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
