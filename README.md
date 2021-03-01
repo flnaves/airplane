@@ -1,4 +1,4 @@
-# Airplane (React, Material UI, and REST API)
+# Airplane (React, Material UI and REST API)
 This is a Demo of using React, Material UI and a REST API application in InterSystems IRIS, showing information with different types of graphics, the datasource is get from CENIPA (Aeronautical Accident Prevention and Research Center).
 
 ## Developers
