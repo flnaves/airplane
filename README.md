@@ -10,6 +10,29 @@ This is a Demo of using React, Material UI and a REST API application in InterSy
 ## Prerequisites
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
 
+# Demonstration of screens
+
+## Dashboard Menu
+
+![Image Dashboard Menu](https://raw.githubusercontent.com/flnaves/airplane/master/images/print1.png)
+
+## Occurence Type Report
+
+![Image Occurence Type](https://raw.githubusercontent.com/flnaves/airplane/master/images/print2.png)
+
+## Airplane Model Report
+
+![Image Airplane Model](https://raw.githubusercontent.com/flnaves/airplane/master/images/print3.png)
+
+## Geographic Report
+
+![Image Geographic Report](https://raw.githubusercontent.com/flnaves/airplane/master/images/print4.png)
+
+## Contributing Factors Report
+
+![Image Contributing Factors Report](https://raw.githubusercontent.com/flnaves/airplane/master/images/print5.png)
+
+
 ## How to Run the Application
 
 ### Installation
@@ -41,7 +64,7 @@ http://localhost:3000/
 
 or open the folder in VSCode and do the following:
 
-![gif](airplane.gif)
+![Airplane usage demo](https://raw.githubusercontent.com/flnaves/airplane/master/images/airplane.gif)
 
 # Testing
 
@@ -60,4 +83,4 @@ http://localhost:52773/csp/sys/%25UnitTest.Portal.Indices.cls?Index=2&$NAMESPACE
 ```
 Tutorial how to test:
 
-![gif](unittest.gif)
+![Airplane test demo](https://raw.githubusercontent.com/flnaves/airplane/master/images/unittest.gif)
