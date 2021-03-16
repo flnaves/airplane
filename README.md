@@ -14,23 +14,23 @@ Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installi
 
 ## Dashboard Menu
 
-![Image Dashboard Menu](https://raw.githubusercontent.com/flnaves/airplane/master/images/print1.png)
+![Image Dashboard Menu](https://raw.githubusercontent.com/flnaves/airplane/master/images/print1.PNG)
 
 ## Occurence Type Report
 
-![Image Occurence Type](https://raw.githubusercontent.com/flnaves/airplane/master/images/print2.png)
+![Image Occurence Type](https://raw.githubusercontent.com/flnaves/airplane/master/images/print2.PNG)
 
 ## Airplane Model Report
 
-![Image Airplane Model](https://raw.githubusercontent.com/flnaves/airplane/master/images/print3.png)
+![Image Airplane Model](https://raw.githubusercontent.com/flnaves/airplane/master/images/print3.PNG)
 
 ## Geographic Report
 
-![Image Geographic Report](https://raw.githubusercontent.com/flnaves/airplane/master/images/print4.png)
+![Image Geographic Report](https://raw.githubusercontent.com/flnaves/airplane/master/images/print4.PNG)
 
 ## Contributing Factors Report
 
-![Image Contributing Factors Report](https://raw.githubusercontent.com/flnaves/airplane/master/images/print5.png)
+![Image Contributing Factors Report](https://raw.githubusercontent.com/flnaves/airplane/master/images/print5.PNG)
 
 
 ## How to Run the Application
